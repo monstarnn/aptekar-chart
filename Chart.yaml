@@ -1,0 +1,13 @@
+name: aptekar
+version: 1.0.0
+description: Aptekar API
+keywords:
+- api
+- backend
+- aptekar
+sources:
+- https://github.com/monstarnn/aptekar
+maintainers:
+- name: Vadim Grishin
+  email: monstarnn@gmail.com
+engine: gotpl

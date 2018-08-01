@@ -1,0 +1,12 @@
+image: kuberlab/aptekar:latest
+serviceType: ClusterIP
+resources:
+  requests:
+    memory: 64Mi
+    cpu: 50m
+
+# data connection
+postgresHost: "localhost"
+postgresPort: "5432"
+postgresUser: "postgres"
+postgresPassword: ""
