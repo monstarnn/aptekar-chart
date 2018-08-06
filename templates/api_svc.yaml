@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "fullname" . }}
+  name: aptekar-api
   labels:
-    app: {{ template "fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+    app: aptekar
+    component: aptekar-api
 spec:
-  type: {{ .Values.serviceType }}
+  type: {{ .Values.api.serviceType }}
   ports:
   - name: http
     port: 8082
     targetPort: http
+    protocol: TCP
   selector:
-    app: {{ template "fullname" . }}
+    app: aptekar
+    component: aptekar-api

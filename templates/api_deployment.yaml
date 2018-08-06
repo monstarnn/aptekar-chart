@@ -1,25 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ template "fullname" . }}
-  labels:
-    app: {{ template "fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+  name: aptekar-api
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: {{ template "fullname" . }}
-        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-        release: "{{ .Release.Name }}"
-        heritage: "{{ .Release.Service }}"
+        app: aptekar
+        component: aptekar-api
     spec:
       containers:
-      - name: {{ template "fullname" . }}
-        image: {{ .Values.image }}
+      - name: aptekar-api
+        image: {{ .Values.api.image }}
         readinessProbe:
           httpGet:
             path: /probe
@@ -29,18 +22,18 @@ spec:
           timeoutSeconds: 3
           successThreshold: 1
           failureThreshold: 3
-        imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+        imagePullPolicy: {{ default "" .Values.api.imagePullPolicy | quote }}
         env:
         - name: PG_HOST
-          value: {{ default "localhost" .Values.postgresHost | quote }}
+          value: {{ default "localhost" .Values.api.postgresHost | quote }}
         - name: PG_PORT
-          value: {{ default "5432" .Values.postgresPort | quote }}
+          value: {{ default "5432" .Values.api.postgresPort | quote }}
         - name: PG_USER
-          value: {{ default "postgres" .Values.postgresUser | quote }}
+          value: {{ default "postgres" .Values.api.postgresUser | quote }}
         - name: PG_PWD
-          value: {{ default "" .Values.postgresPassword | quote }}
+          value: {{ default "" .Values.api.postgresPassword | quote }}
         ports:
         - name: http
           containerPort: 8082
         resources:
-{{ toYaml .Values.resources | indent 10 }}
+{{ toYaml .Values.api.resources | indent 10 }}

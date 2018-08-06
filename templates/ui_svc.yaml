@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: aptekar-ui
+  labels:
+    app: aptekar
+    component: aptekar-ui
+spec:
+  type: {{ .Values.ui.serviceType }}
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: http
+  selector:
+    app: aptekar
+    component: aptekar-ui
