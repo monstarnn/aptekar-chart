@@ -25,13 +25,13 @@ spec:
         imagePullPolicy: {{ default "" .Values.api.imagePullPolicy | quote }}
         env:
         - name: PG_HOST
-          value: {{ default "localhost" .Values.api.postgresHost | quote }}
+          value: {{ default "localhost" .Values.api.postgres.host | quote }}
         - name: PG_PORT
-          value: {{ default "5432" .Values.api.postgresPort | quote }}
+          value: {{ default "5432" .Values.api.postgres.port | quote }}
         - name: PG_USER
-          value: {{ default "postgres" .Values.api.postgresUser | quote }}
+          value: {{ default "postgres" .Values.api.postgres.user | quote }}
         - name: PG_PWD
-          value: {{ default "" .Values.api.postgresPassword | quote }}
+          value: {{ default "" .Values.api.postgres.password | quote }}
         ports:
         - name: http
           containerPort: 8082
