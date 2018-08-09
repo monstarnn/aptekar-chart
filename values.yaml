@@ -11,6 +11,9 @@ api:
     port: "5432"
     user: "postgres"
     password: ""
+  predicted:
+    fake: false
+    amiraHost: ""
 ui:
   image: kuberlab/aptekar-ui:latest
   serviceType: ClusterIP
