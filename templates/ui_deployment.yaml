@@ -13,7 +13,7 @@ spec:
       containers:
       - name: aptekar-ui
         image: {{ .Values.UI.Image.Name }}:{{ .Values.UI.Image.Tag }}
-        imagePullPolicy: {{ default "" .Values.api.imagePullPolicy | quote }}
+        imagePullPolicy: {{ default "" .Values.UI.imagePullPolicy | quote }}
         ports:
         - name: http
           containerPort: 80
