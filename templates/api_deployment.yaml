@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: aptekar-api
-        image: {{ .Values.api.image }}
+        image: {{ .Values.API.Image.Name }}:{{ .Values.API.Image.Tag }}
         readinessProbe:
           httpGet:
             path: /probe
@@ -22,22 +22,22 @@ spec:
           timeoutSeconds: 3
           successThreshold: 1
           failureThreshold: 3
-        imagePullPolicy: {{ default "" .Values.api.imagePullPolicy | quote }}
+        imagePullPolicy: {{ default "" .Values.API.imagePullPolicy | quote }}
         env:
         - name: PG_HOST
-          value: {{ default "localhost" .Values.api.postgres.host | quote }}
+          value: {{ default "localhost" .Values.API.postgres.host | quote }}
         - name: PG_PORT
-          value: {{ default "5432" .Values.api.postgres.port | quote }}
+          value: {{ default "5432" .Values.API.postgres.port | quote }}
         - name: PG_USER
-          value: {{ default "postgres" .Values.api.postgres.user | quote }}
+          value: {{ default "postgres" .Values.API.postgres.user | quote }}
         - name: PG_PWD
-          value: {{ default "" .Values.api.postgres.password | quote }}
+          value: {{ default "" .Values.API.postgres.password | quote }}
         - name: FAKE_PREDICTED
-          value: {{ default "false" .Values.api.predicted.fake | quote }}
+          value: {{ default "false" .Values.API.predicted.fake | quote }}
         - name: AMIRA_HOST
-          value: {{ default "" .Values.api.predicted.amiraHost | quote }}
+          value: {{ default "" .Values.API.predicted.amiraHost | quote }}
         ports:
         - name: http
           containerPort: 8082
         resources:
-{{ toYaml .Values.api.resources | indent 10 }}
+{{ toYaml .Values.API.resources | indent 10 }}

@@ -1,5 +1,7 @@
-api:
-  image: kuberlab/aptekar:latest
+API:
+  Image:
+    Name: kuberlab/aptekar
+    Tag: latest
   serviceType: ClusterIP
   imagePullPolicy: Always
   resources:
@@ -15,7 +17,9 @@ api:
     fake: false
     amiraHost: ""
 ui:
-  image: kuberlab/aptekar-ui:latest
+  Image:
+    Name: kuberlab/aptekar-ui
+    Tag: latest
   serviceType: ClusterIP
   imagePullPolicy: Always
   resources:

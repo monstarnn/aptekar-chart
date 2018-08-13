@@ -6,7 +6,7 @@ metadata:
     app: aptekar
     component: aptekar-api
 spec:
-  type: {{ .Values.api.serviceType }}
+  type: {{ .Values.API.serviceType }}
   ports:
   - name: http
     port: 8082

@@ -6,7 +6,7 @@ metadata:
     app: aptekar
     component: aptekar-ui
 spec:
-  type: {{ .Values.ui.serviceType }}
+  type: {{ .Values.UI.serviceType }}
   ports:
   - port: 80
     targetPort: 80

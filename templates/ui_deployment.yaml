@@ -12,10 +12,10 @@ spec:
     spec:
       containers:
       - name: aptekar-ui
-        image: {{ .Values.ui.image }}
+        image: {{ .Values.UI.Image.Name }}:{{ .Values.UI.Image.Tag }}
         imagePullPolicy: {{ default "" .Values.api.imagePullPolicy | quote }}
         ports:
         - name: http
           containerPort: 80
         resources:
-{{ toYaml .Values.ui.resources | indent 10 }}
+{{ toYaml .Values.UI.resources | indent 10 }}
