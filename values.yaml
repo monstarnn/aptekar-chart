@@ -17,7 +17,7 @@ API:
   predicted:
     fake: false
     amiraHost: ""
-ui:
+UI:
   Image:
     kuberlab.io/image:
       Name: kuberlab/aptekar-ui
