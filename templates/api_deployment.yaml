@@ -36,6 +36,12 @@ spec:
           value: {{ default "false" .Values.API.predicted.fake | quote }}
         - name: AMIRA_HOST
           value: {{ default "" .Values.API.predicted.amiraHost | quote }}
+        - name: AMIRA_PORT
+          value: {{ default "" .Values.API.predicted.amiraPort | quote }}
+        - name: LSTM_HOST
+          value: {{ default "" .Values.API.predicted.lstmHost | quote }}
+        - name: LSTM_PORT
+          value: {{ default "" .Values.API.predicted.lstmPort | quote }}
         ports:
         - name: http
           containerPort: 8082
