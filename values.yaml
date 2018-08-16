@@ -21,6 +21,8 @@ API:
     amiraPort: 9000
     lstmHost: ""
     lstmPort: 9000
+    fireHost: ""
+    firePort: 9000
 UI:
   Image:
     kuberlab.io/image:
