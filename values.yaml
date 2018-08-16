@@ -17,8 +17,8 @@ API:
     password: ""
   predicted:
     fake: false
-    amiraHost: ""
-    amiraPort: 9000
+    arimaHost: ""
+    arimaPort: 9000
     lstmHost: ""
     lstmPort: 9000
     fireHost: ""

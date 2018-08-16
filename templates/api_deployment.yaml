@@ -34,10 +34,10 @@ spec:
           value: {{ default "" .Values.API.postgres.password | quote }}
         - name: FAKE_PREDICTED
           value: {{ default "false" .Values.API.predicted.fake | quote }}
-        - name: AMIRA_HOST
-          value: {{ default "" .Values.API.predicted.amiraHost | quote }}
-        - name: AMIRA_PORT
-          value: {{ default "" .Values.API.predicted.amiraPort | quote }}
+        - name: ARIMA_HOST
+          value: {{ default "" .Values.API.predicted.arimaHost | quote }}
+        - name: ARIMA_PORT
+          value: {{ default "" .Values.API.predicted.arimaPort | quote }}
         - name: LSTM_HOST
           value: {{ default "" .Values.API.predicted.lstmHost | quote }}
         - name: LSTM_PORT
