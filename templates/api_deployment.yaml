@@ -28,6 +28,10 @@ spec:
           value: {{ default "localhost" .Values.API.postgres.host | quote }}
         - name: PG_PORT
           value: {{ default "5432" .Values.API.postgres.port | quote }}
+        - name: CH_HOST
+          value: {{ default "localhost" .Values.API.clickhouse.host | quote }}
+        - name: CH_PORT
+          value: {{ default "9000" .Values.API.clickhouse.port | quote }}
         - name: PG_USER
           value: {{ default "postgres" .Values.API.postgres.user | quote }}
         - name: PG_PWD
