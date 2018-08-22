@@ -4,7 +4,8 @@ API:
       Name: kuberlab/aptekar
       Tag: latest
       CandidateTag: '>= 1.0.0'
-  serviceType: ClusterIP
+  serviceType: NodePort
+  nodePort: 30700
   imagePullPolicy: Always
   resources:
     requests:
@@ -32,7 +33,8 @@ UI:
       Name: kuberlab/aptekar-ui
       Tag: latest
       CandidateTag: '>= 1.0.0'
-  serviceType: ClusterIP
+  serviceType: NodePort
+  nodePort: 30701
   imagePullPolicy: Always
   resources:
     requests:

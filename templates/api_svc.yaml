@@ -12,6 +12,11 @@ spec:
     port: 8082
     targetPort: http
     protocol: TCP
+    {{- if eq .Values.API.serviceType "NodePort" }}
+    {{- if .Values.API.nodePort }}
+    nodePort: {{ .Values.API.nodePort }}
+    {{- end }}
+    {{- end }}
   selector:
     app: aptekar
     component: aptekar-api

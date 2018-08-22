@@ -12,6 +12,11 @@ spec:
     targetPort: 80
     protocol: TCP
     name: http
+    {{- if eq .Values.UI.serviceType "NodePort" }}
+    {{- if .Values.UI.nodePort }}
+    nodePort: {{ .Values.UI.nodePort }}
+    {{- end }}
+    {{- end }}
   selector:
     app: aptekar
     component: aptekar-ui
